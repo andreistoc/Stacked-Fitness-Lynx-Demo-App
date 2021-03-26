@@ -11,6 +11,8 @@
 		27FB7041260E339A0033B953 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB7040260E339A0033B953 /* ContentView.swift */; };
 		27FB7043260E339B0033B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FB7042260E339B0033B953 /* Assets.xcassets */; };
 		27FB7046260E339B0033B953 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FB7045260E339B0033B953 /* Preview Assets.xcassets */; };
+		27FB704F260E377A0033B953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27FB704E260E377A0033B953 /* GoogleService-Info.plist */; };
+		79FF58268ABD1F28CFB8ED3B /* Pods_Stacked_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF875CB17F45115DFB4D373 /* Pods_Stacked_Fitness.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,10 @@
 		27FB7042260E339B0033B953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27FB7045260E339B0033B953 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27FB7047260E339B0033B953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27FB704E260E377A0033B953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BF875CB17F45115DFB4D373 /* Pods_Stacked_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stacked_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		571E851361C96FFB85247780 /* Pods-Stacked Fitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stacked Fitness.debug.xcconfig"; path = "Target Support Files/Pods-Stacked Fitness/Pods-Stacked Fitness.debug.xcconfig"; sourceTree = "<group>"; };
+		B88C17264F892B640519B490 /* Pods-Stacked Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stacked Fitness.release.xcconfig"; path = "Target Support Files/Pods-Stacked Fitness/Pods-Stacked Fitness.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FF58268ABD1F28CFB8ED3B /* Pods_Stacked_Fitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +45,8 @@
 			children = (
 				27FB703D260E339A0033B953 /* Stacked Fitness */,
 				27FB703C260E339A0033B953 /* Products */,
+				955F865EB06587F3B56CABDC /* Pods */,
+				ADE6900BB03AB6AAA84C3E59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +61,7 @@
 		27FB703D260E339A0033B953 /* Stacked Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				27FB704E260E377A0033B953 /* GoogleService-Info.plist */,
 				27FB703E260E339A0033B953 /* Stacked_FitnessApp.swift */,
 				27FB7040260E339A0033B953 /* ContentView.swift */,
 				27FB7042260E339B0033B953 /* Assets.xcassets */,
@@ -69,6 +79,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		955F865EB06587F3B56CABDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				571E851361C96FFB85247780 /* Pods-Stacked Fitness.debug.xcconfig */,
+				B88C17264F892B640519B490 /* Pods-Stacked Fitness.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ADE6900BB03AB6AAA84C3E59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BF875CB17F45115DFB4D373 /* Pods_Stacked_Fitness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27FB704A260E339B0033B953 /* Build configuration list for PBXNativeTarget "Stacked Fitness" */;
 			buildPhases = (
+				EA26AC1651B57DE676DBD07D /* [CP] Check Pods Manifest.lock */,
 				27FB7037260E339A0033B953 /* Sources */,
 				27FB7038260E339A0033B953 /* Frameworks */,
 				27FB7039260E339A0033B953 /* Resources */,
+				749D58CC19FCB8182C3E84E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,10 +158,53 @@
 			files = (
 				27FB7046260E339B0033B953 /* Preview Assets.xcassets in Resources */,
 				27FB7043260E339B0033B953 /* Assets.xcassets in Resources */,
+				27FB704F260E377A0033B953 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		749D58CC19FCB8182C3E84E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stacked Fitness/Pods-Stacked Fitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stacked Fitness/Pods-Stacked Fitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stacked Fitness/Pods-Stacked Fitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA26AC1651B57DE676DBD07D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stacked Fitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27FB7037260E339A0033B953 /* Sources */ = {
@@ -264,6 +337,7 @@
 		};
 		27FB704B260E339B0033B953 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 571E851361C96FFB85247780 /* Pods-Stacked Fitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -277,15 +351,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andreistoc.Stacked-Fitness";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andreistoc.stacked-fitness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		27FB704C260E339B0033B953 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88C17264F892B640519B490 /* Pods-Stacked Fitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,10 +374,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andreistoc.Stacked-Fitness";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andreistoc.stacked-fitness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
