@@ -17,7 +17,7 @@ struct Stacked_FitnessApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(SessionStore())
         }
     }
 }

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270BC861261319B5002B074D /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270BC860261319B5002B074D /* AppView.swift */; };
+		276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6A2611E944001D1F62 /* SessionStore.swift */; };
+		276BBB6E261209F2001D1F62 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6D261209F2001D1F62 /* AuthView.swift */; };
 		27FB703F260E339A0033B953 /* Stacked_FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB703E260E339A0033B953 /* Stacked_FitnessApp.swift */; };
 		27FB7041260E339A0033B953 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB7040260E339A0033B953 /* ContentView.swift */; };
 		27FB7043260E339B0033B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27FB7042260E339B0033B953 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270BC860261319B5002B074D /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		276BBB6A2611E944001D1F62 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		276BBB6D261209F2001D1F62 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		27FB703B260E339A0033B953 /* Stacked Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stacked Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FB703E260E339A0033B953 /* Stacked_FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stacked_FitnessApp.swift; sourceTree = "<group>"; };
 		27FB7040260E339A0033B953 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				27FB7042260E339B0033B953 /* Assets.xcassets */,
 				27FB7047260E339B0033B953 /* Info.plist */,
 				27FB7044260E339B0033B953 /* Preview Content */,
+				276BBB6A2611E944001D1F62 /* SessionStore.swift */,
+				276BBB6D261209F2001D1F62 /* AuthView.swift */,
+				270BC860261319B5002B074D /* AppView.swift */,
 			);
 			path = "Stacked Fitness";
 			sourceTree = "<group>";
@@ -85,7 +94,6 @@
 				571E851361C96FFB85247780 /* Pods-Stacked Fitness.debug.xcconfig */,
 				B88C17264F892B640519B490 /* Pods-Stacked Fitness.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +221,9 @@
 			files = (
 				27FB7041260E339A0033B953 /* ContentView.swift in Sources */,
 				27FB703F260E339A0033B953 /* Stacked_FitnessApp.swift in Sources */,
+				276BBB6E261209F2001D1F62 /* AuthView.swift in Sources */,
+				270BC861261319B5002B074D /* AppView.swift in Sources */,
+				276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
