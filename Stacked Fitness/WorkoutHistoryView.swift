@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutHistoryView: View {
     @EnvironmentObject var session: SessionStore
-    @ObservedObject var workoutStore = WorkoutStore()
+    @EnvironmentObject var workoutStore: WorkoutStore
     
     func fetchWorkouts() {
         print("Fetching workouts")

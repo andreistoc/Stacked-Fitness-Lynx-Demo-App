@@ -13,7 +13,8 @@ struct NewWorkoutView: View {
     @State var date = Date()
     @State var duration: Double = 10
     
-    @ObservedObject var workoutStore = WorkoutStore()
+    @EnvironmentObject var workoutStore: WorkoutStore
+    @EnvironmentObject var session: SessionStore
     
     var body: some View {
         Group {
@@ -73,8 +74,8 @@ struct NewWorkoutView: View {
     }
     
     func createWorkout() {
-        let workout = Workout(id: "", name: name, calories: Int(calories), date: date, duration: duration, photoURL: "")
-        workoutStore.createWorkout(workout: workout)
+        let workout = Workout(id: "", name: name, calories: Int(calories), date: date, duration: Int(duration), photoURL: "")
+        workoutStore.createWorkout(workout: workout, userID: self.session.session!.uid)
     }
     
     func getPhoto() {
@@ -84,6 +85,6 @@ struct NewWorkoutView: View {
 
 struct NewWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        NewWorkoutView().environmentObject(SessionStore())
+        NewWorkoutView().environmentObject(SessionStore()).environmentObject(WorkoutStore())
     }
 }

@@ -13,13 +13,13 @@ struct Workout: Identifiable {
     var name: String
     var calories: Int
     var date: Date
-    var duration: TimeInterval
+    var duration: Int
     var photoURL: String?
 }
 
 class WorkoutStore: ObservableObject {
     var db = Firestore.firestore()
-    var workouts: [Workout] = []
+    @Published var workouts: [Workout] = []
     
     
     init(workouts: [Workout] = []) {
@@ -28,8 +28,8 @@ class WorkoutStore: ObservableObject {
     
     func fetch(userID: String) {
         db.collection("workouts")
-            .whereField("userID", isEqualTo: userID)
-            .order(by: "updatedAt", descending: true)
+            //.whereField("userID", isEqualTo: userID)
+            //.order(by: "updatedAt", descending: true)
             .getDocuments { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting docs: \(error)")
@@ -48,17 +48,17 @@ class WorkoutStore: ObservableObject {
                             return
                         }
                         
-                        guard let workoutTimestamp = (documentData["date"] as? TimeInterval) else {
+                        guard let workoutTimestamp = (documentData["date"] as? Timestamp) else {
                             print("No timestamp")
                             return
                         }
                         
-                        guard let duration = documentData["duration"] as? TimeInterval else {
+                        guard let duration = documentData["duration"] as? Int else {
                             print("No duration")
                             return
                         }
                         
-                        let workout = Workout(id: String(document.documentID), name: workoutName, calories: calories, date: Date(timeIntervalSince1970: workoutTimestamp), duration: duration, photoURL: documentData["imageURL"] as? String)
+                        let workout = Workout(id: String(document.documentID), name: workoutName, calories: calories, date: Date(timeIntervalSince1970: TimeInterval(workoutTimestamp.seconds)), duration: Int(duration), photoURL: documentData["imageURL"] as? String)
                         
                         self.workouts.append(workout)
                     }
@@ -66,8 +66,9 @@ class WorkoutStore: ObservableObject {
             }
     }
     
-    func createWorkout(workout: Workout) {
+    func createWorkout(workout: Workout, userID: String) {
         db.collection("workouts").addDocument(data: [
+            "userID": userID,
             "name": workout.name,
             "calories": workout.calories,
             "date": workout.date,

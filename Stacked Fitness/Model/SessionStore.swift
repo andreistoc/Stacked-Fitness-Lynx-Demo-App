@@ -29,8 +29,6 @@ struct User {
     }
 }
 
-
-
 /**
  * SessionStore manages the firebase user session. It contains the current user. It
  * also provides functions for signing up, signing in, etc.
@@ -67,8 +65,8 @@ class SessionStore : ObservableObject {
     func signOut () -> Bool {
         do {
             try Auth.auth().signOut()
-//            self.isLoggedIn = false
-//            self.session = nil
+            self.isLoggedIn = false
+            self.session = nil
             return true
         } catch {
             return false
