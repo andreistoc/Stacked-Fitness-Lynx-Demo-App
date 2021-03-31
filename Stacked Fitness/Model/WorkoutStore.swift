@@ -71,8 +71,9 @@ class WorkoutStore: ObservableObject {
             "name": workout.name,
             "calories": workout.calories,
             "date": workout.date,
+            "createdAt": Date(),
             "duration": Int(workout.duration),
-            "photoURL": ""
+            "photoURL": NSNull()
         ])
     }
 }

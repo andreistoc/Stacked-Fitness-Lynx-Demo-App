@@ -20,7 +20,9 @@ struct WorkoutHistoryView: View {
         NavigationView {
             ZStack {
                 ForEach(workoutStore.workouts) { workout in
-                    Text(workout.name)
+                    NavigationLink(destination: WorkoutDetailView(workout: workout)) {
+                        Text(workout.name)
+                    }
                 }
                 VStack{
                     Spacer()
