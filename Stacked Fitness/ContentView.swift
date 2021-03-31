@@ -10,6 +10,7 @@ import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var workoutStore: WorkoutStore
     
     func getUser() {
         session.listen()
