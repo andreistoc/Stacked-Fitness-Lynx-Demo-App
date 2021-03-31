@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if session.session != nil {
-                AppView()
+                WorkoutHistoryView()
             } else {
                 AuthView()
             }

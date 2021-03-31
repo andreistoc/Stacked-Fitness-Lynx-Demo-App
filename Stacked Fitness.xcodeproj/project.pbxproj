@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		270BC861261319B5002B074D /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270BC860261319B5002B074D /* AppView.swift */; };
+		270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270BC860261319B5002B074D /* WorkoutHistoryView.swift */; };
+		2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D754261333DE00A7B5AC /* NewWorkoutView.swift */; };
+		2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D7592613394C00A7B5AC /* WorkoutStore.swift */; };
 		276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6A2611E944001D1F62 /* SessionStore.swift */; };
 		276BBB6E261209F2001D1F62 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6D261209F2001D1F62 /* AuthView.swift */; };
 		27FB703F260E339A0033B953 /* Stacked_FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB703E260E339A0033B953 /* Stacked_FitnessApp.swift */; };
@@ -19,7 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		270BC860261319B5002B074D /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		270BC860261319B5002B074D /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryView.swift; sourceTree = "<group>"; };
+		2740D754261333DE00A7B5AC /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
+		2740D7592613394C00A7B5AC /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		276BBB6A2611E944001D1F62 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		276BBB6D261209F2001D1F62 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		27FB703B260E339A0033B953 /* Stacked Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stacked Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2740D7582613392900A7B5AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2740D7592613394C00A7B5AC /* WorkoutStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		27FB7032260E33990033B953 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +79,7 @@
 		27FB703D260E339A0033B953 /* Stacked Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				2740D7582613392900A7B5AC /* Model */,
 				27FB704E260E377A0033B953 /* GoogleService-Info.plist */,
 				27FB703E260E339A0033B953 /* Stacked_FitnessApp.swift */,
 				27FB7040260E339A0033B953 /* ContentView.swift */,
@@ -75,7 +88,8 @@
 				27FB7044260E339B0033B953 /* Preview Content */,
 				276BBB6A2611E944001D1F62 /* SessionStore.swift */,
 				276BBB6D261209F2001D1F62 /* AuthView.swift */,
-				270BC860261319B5002B074D /* AppView.swift */,
+				270BC860261319B5002B074D /* WorkoutHistoryView.swift */,
+				2740D754261333DE00A7B5AC /* NewWorkoutView.swift */,
 			);
 			path = "Stacked Fitness";
 			sourceTree = "<group>";
@@ -222,7 +236,9 @@
 				27FB7041260E339A0033B953 /* ContentView.swift in Sources */,
 				27FB703F260E339A0033B953 /* Stacked_FitnessApp.swift in Sources */,
 				276BBB6E261209F2001D1F62 /* AuthView.swift in Sources */,
-				270BC861261319B5002B074D /* AppView.swift in Sources */,
+				2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */,
+				2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */,
+				270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */,
 				276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
