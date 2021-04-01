@@ -17,7 +17,10 @@ struct NewWorkoutView: View {
     @EnvironmentObject var session: SessionStore
     
     var body: some View {
-        Group {
+        ZStack {
+            Rectangle()
+                .fill(LinearGradient(gradient: Gradient(colors: [Color("gradient3"), Color("gradient4")]), startPoint: .top, endPoint: .bottom))
+                .edgesIgnoringSafeArea([.bottom, .top])
             VStack {
                 Form {
                     Section(header: Text("Workout Name")) {
@@ -66,9 +69,11 @@ struct NewWorkoutView: View {
                             Spacer()
                         }
                     }
+                }.onAppear() {
+                    UITableView.appearance().backgroundColor = UIColor.clear
+                    //UITableViewCell.appearance().backgroundColor = UIColor.clear
                 }
-                Spacer()
-            }.padding()
+            }
         }.navigationTitle(Text("New Workout"))
     }
     
