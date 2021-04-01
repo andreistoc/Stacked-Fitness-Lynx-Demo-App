@@ -19,7 +19,6 @@ struct NewWorkoutView: View {
     var body: some View {
         Group {
             VStack {
-                Text("New Workout").font(.subheadline)
                 Form {
                     Section(header: Text("Workout Name")) {
                         TextField("Enter a title", text: $name)
@@ -70,7 +69,7 @@ struct NewWorkoutView: View {
                 }
                 Spacer()
             }.padding()
-        }
+        }.navigationTitle(Text("New Workout"))
     }
     
     func createWorkout() {

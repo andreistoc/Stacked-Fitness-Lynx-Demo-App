@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270BC860261319B5002B074D /* WorkoutHistoryView.swift */; };
+		271438CA2615384100EEA387 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271438C92615384100EEA387 /* WorkoutCardView.swift */; };
 		2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D754261333DE00A7B5AC /* NewWorkoutView.swift */; };
 		2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D7592613394C00A7B5AC /* WorkoutStore.swift */; };
 		276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6A2611E944001D1F62 /* SessionStore.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		270BC860261319B5002B074D /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryView.swift; sourceTree = "<group>"; };
+		271438C92615384100EEA387 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		2740D754261333DE00A7B5AC /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 		2740D7592613394C00A7B5AC /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		276BBB6A2611E944001D1F62 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271438C82615382C00EEA387 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				271438C92615384100EEA387 /* WorkoutCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2740D7582613392900A7B5AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		27FB703D260E339A0033B953 /* Stacked Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				271438C82615382C00EEA387 /* Views */,
 				27A54B1F261477D8006030E6 /* Workout Views */,
 				2740D7582613392900A7B5AC /* Model */,
 				27FB704E260E377A0033B953 /* GoogleService-Info.plist */,
@@ -249,6 +260,7 @@
 				276BBB6E261209F2001D1F62 /* AuthView.swift in Sources */,
 				27A54B1D26147557006030E6 /* WorkoutDetailView.swift in Sources */,
 				2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */,
+				271438CA2615384100EEA387 /* WorkoutCardView.swift in Sources */,
 				2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */,
 				270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */,
 				276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */,
