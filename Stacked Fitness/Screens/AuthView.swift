@@ -40,70 +40,69 @@ struct SignInView : View {
     
     
     var body: some View {
-        
-        VStack {
-            
-            Spacer()
-            
-            
-            Group {
-                
-//                Image("logo")
-//                    .resizable()
-//                    .frame(width: 75, height: 75)
-                
-                Text("STACKED FITNESS").font(.title).padding(.bottom)
-                
-                Text("GET ABSOLUTELY STACKED ASAP.")
-                    .font(.subheadline)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-            }
-            
-            Spacer()
-            
-            Group {
-                Divider()
-                
-                
-                
-                TextField("Email", text: $email)
-                    .padding()
-                
-                SecureField("Password", text: $password)
-                    .padding([.leading, .trailing])
-                
-                
-                if (error) {
-                    // Show alert
-                    Text("THERE HAS BEEN A TERRIBLE MISTAKE")
-                }
-                
-                
-                
-                Button("Sign in", action: signIn)
-                    .padding()
-            }
-            
-            
-            
+        ZStack {
+            Color("background1")
+                .ignoresSafeArea()
             VStack {
-                Divider()
-                HStack(alignment: .center) {
-                    Text("Don't have an account?")
-                        .font(.footnote)
+                
+                Group {
                     
+                    Image("logo")
+                        .resizable()
+                        .frame(width: 120, height: 130)
                     
+                    Text("STACKED FITNESS").font(.title).fontWeight(.heavy).padding(.bottom).foregroundColor(.white)
                     
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign up.").font(.footnote)
-                    }
+                    Text("GET ABSOLUTELY STACKED")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
-                .padding()
+    
+                
+                Group {
+                    Divider()
+                    
+                    
+                    
+                    TextField("Email", text: $email)
+                        .padding()
+                    
+                    SecureField("Password", text: $password)
+                        .padding([.leading, .trailing])
+                    
+                    
+                    if (error) {
+                        // Show alert
+                        Text("THERE HAS BEEN A TERRIBLE MISTAKE").padding()
+                    }
+                    
+                    
+                    Button(action: signIn, label: {
+                        Text("Sign In").foregroundColor(.black)
+                    }).frame(width: 100, height: 50, alignment: .center).background(Color.white).cornerRadius(16)
+                }
+                
+                
+                
+                VStack {
+                    Divider()
+                    HStack(alignment: .center) {
+                        Text("Don't have an account?")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                        
+                        
+                        
+                        NavigationLink(destination: SignUpView()) {
+                            Text("Sign up.").foregroundColor(.white).font(.footnote).fontWeight(.heavy)
+                        }
+                    }
+                    .padding()
+                }
+                Spacer()
             }
-            
-            
         }
         
     }
@@ -135,39 +134,44 @@ struct SignUpView : View {
     }
     
     var body : some View {
-        VStack {
+        ZStack {
+            Color("background1")
+                .ignoresSafeArea()
+            VStack {
             
-            Text("Create an account")
-                .font(.title)
-                .padding(.horizontal)
-            
-            TextField("Email", text: $email)
-                .padding()
-            
-            VStack(alignment: .leading) {
-                SecureField("Password", text: $password)
-                Text("At least 8 characters required.").font(.footnote)
-            }.padding(.horizontal)
-            
-            if (error) {
-                // Show alert
-                Text("COULD NOT CREATE ACCOUNT")
+                
+                Text("Create an account")
+                    .font(.title)
+                    .padding(.horizontal)
+                
+                TextField("Email", text: $email)
+                    .padding()
+                
+                VStack(alignment: .leading) {
+                    SecureField("Password", text: $password)
+                    Text("At least 8 characters required.").font(.footnote)
+                }.padding(.horizontal)
+                
+                if (error) {
+                    // Show alert
+                    Text("COULD NOT CREATE ACCOUNT")
+                }
+                
+                Button(action: signUp, label: {
+                    Text("Sign Up").foregroundColor(.black)
+                }).frame(width: 100, height: 50, alignment: .center).background(Color.white).cornerRadius(16).padding()
+                
+                Divider()
+                
+                Text("Creating an account will make you the fittest man alive!")
+                    .font(.footnote)
+                    .lineLimit(nil)
+                    .padding()
+                
+                Spacer()
+                
             }
-            
-            Button("Sign Up", action: signUp)
-                .padding()
-            
-            Divider()
-            
-            Text("Creating an account will make you ABSOULTELY STACKED")
-                .font(.footnote)
-                .lineLimit(nil)
-                .padding()
-            
-            Spacer()
-            
         }
-        
     }
     
 }

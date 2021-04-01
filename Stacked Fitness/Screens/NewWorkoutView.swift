@@ -28,9 +28,8 @@ struct NewWorkoutView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(LinearGradient(gradient: Gradient(colors: [Color("gradient3"), Color("gradient4")]), startPoint: .top, endPoint: .bottom))
-                .edgesIgnoringSafeArea([.bottom, .top])
+            Color("background1")
+            .ignoresSafeArea()
             VStack {
                 Form {
                     Section(header: Text("Workout Name")) {

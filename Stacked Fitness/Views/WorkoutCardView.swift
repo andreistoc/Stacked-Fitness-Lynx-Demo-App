@@ -33,7 +33,7 @@ struct WorkoutCardView: View {
                     }
                 }
             }
-            .background(Color.blue)
+            .background(Color("card"))
             .cornerRadius(10)
             .shadow(radius: 10)
     }
