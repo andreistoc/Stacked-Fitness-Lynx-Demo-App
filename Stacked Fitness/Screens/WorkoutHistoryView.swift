@@ -24,14 +24,15 @@ struct WorkoutHistoryView: View {
                 VStack {
                     ForEach(workoutStore.workouts) { workout in
                         Button(action: {self.showWorkoutDetail.toggle()}) {
-                        WorkoutCardView(workout: workout).padding()
-                            .sheet(isPresented: $showWorkoutDetail) {
-                                WorkoutDetailView(workout: workout)
-                            }
+                            WorkoutCardView(workout: workout).padding()
+                                .sheet(isPresented: $showWorkoutDetail) {
+                                    WorkoutDetailView(workout: workout)
+                                }
                         }
                     }
                     Spacer()
                 }
+                // New workout floating button
                 VStack {
                     Spacer()
                     HStack {
@@ -47,7 +48,14 @@ struct WorkoutHistoryView: View {
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 3, y: 3)
                     }
                 }
+                
             }.navigationTitle(Text("Workout History"))
+            .toolbar {
+                Button("Sign Out") {
+                    session.signOut()
+                    workoutStore.workouts = []
+                }
+            }
         }.onAppear(perform: fetchWorkouts)
     }
 }

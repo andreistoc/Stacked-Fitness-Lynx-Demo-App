@@ -25,16 +25,18 @@ struct WorkoutCardView: View {
                     .padding(20)
                     Spacer()
                     
-//                    Image("Logo")
-//                        .resizable()
-//                        .renderingMode(.original)
-//                        .frame(width: 30, height: 30)
-//                        .padding(.trailing, 20.0)
+                    if let imageURL = workout.photoURL {
+                        WorkoutImageView(url: imageURL)
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                            .padding(.trailing)
+                    }
                 }
             }
             .background(Color.blue)
             .cornerRadius(10)
             .shadow(radius: 10)
     }
+
 }
 

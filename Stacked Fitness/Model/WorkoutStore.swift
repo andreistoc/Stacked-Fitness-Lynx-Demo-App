@@ -15,6 +15,7 @@ struct Workout: Identifiable {
     var date: Date
     var duration: Int
     var photoURL: String?
+    var image: UIImage?
 }
 
 class WorkoutStore: ObservableObject {
@@ -28,8 +29,8 @@ class WorkoutStore: ObservableObject {
     
     func fetch(userID: String) {
         db.collection("workouts")
-            //.whereField("userID", isEqualTo: userID)
-            //.order(by: "updatedAt", descending: true)
+            .whereField("userID", isEqualTo: userID)
+            .order(by: "date", descending: true)
             .getDocuments { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting docs: \(error)")
@@ -58,7 +59,7 @@ class WorkoutStore: ObservableObject {
                             return
                         }
                         
-                        let workout = Workout(id: String(document.documentID), name: workoutName, calories: calories, date: Date(timeIntervalSince1970: TimeInterval(workoutTimestamp.seconds)), duration: Int(duration), photoURL: documentData["imageURL"] as? String)
+                        let workout = Workout(id: String(document.documentID), name: workoutName, calories: calories, date: Date(timeIntervalSince1970: TimeInterval(workoutTimestamp.seconds)), duration: Int(duration), photoURL: documentData["photoURL"] as? String)
                         
                         self.workouts.append(workout)
                     }
