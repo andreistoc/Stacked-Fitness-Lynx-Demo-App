@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct NewWorkoutView: View {
+    
+    // Workout data
     @State var name = ""
     @State var calories: Double = 100
     @State var date = Date()
     @State var duration: Double = 10
     
+    // Image data
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?
+    @State private var image: Image?
+    
     @EnvironmentObject var workoutStore: WorkoutStore
     @EnvironmentObject var session: SessionStore
+    
+    @State private var sourceType: Int = 0
+    var sourceTypes: [UIImagePickerController.SourceType] = [.photoLibrary, .camera, .savedPhotosAlbum]
     
     var body: some View {
         ZStack {
@@ -53,11 +63,22 @@ struct NewWorkoutView: View {
                     Section(header: Text("Upload Photo")) {
                         HStack{
                             Spacer()
-                            Button(action: getPhoto) {
+                            Button(action: {
+                                self.showingImagePicker = true
+                            }) {
                                 Text("Get Photo")
                             }
                             Spacer()
                         }
+                        Picker(selection: $sourceType, label: Text("Select mode")) {
+                            Text("Photo Library").tag(0)
+                            Text("Camera").tag(1)
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                    if image != nil {
+                        image?
+                            .resizable()
+                            .scaledToFit()
                     }
                     
                     Section(header: Text("Create Workout")) {
@@ -75,15 +96,19 @@ struct NewWorkoutView: View {
                 }
             }
         }.navigationTitle(Text("New Workout"))
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: self.$inputImage, sourceType: UIImagePickerController.SourceType(rawValue: sourceType) ?? .photoLibrary)
+        }
     }
     
     func createWorkout() {
         let workout = Workout(id: "", name: name, calories: Int(calories), date: date, duration: Int(duration), photoURL: "")
-        workoutStore.createWorkout(workout: workout, userID: self.session.session!.uid)
+        workoutStore.createWorkout(workout: workout, userID: self.session.session!.uid, photo: inputImage)
     }
     
-    func getPhoto() {
-        
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
 }
 

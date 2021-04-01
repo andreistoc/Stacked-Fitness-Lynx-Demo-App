@@ -66,8 +66,8 @@ class WorkoutStore: ObservableObject {
             }
     }
     
-    func createWorkout(workout: Workout, userID: String) {
-        db.collection("workouts").addDocument(data: [
+    func createWorkout(workout: Workout, userID: String, photo: UIImage?) {
+        let id = db.collection("workouts").addDocument(data: [
             "userID": userID,
             "name": workout.name,
             "calories": workout.calories,
@@ -75,6 +75,43 @@ class WorkoutStore: ObservableObject {
             "createdAt": Date(),
             "duration": Int(workout.duration),
             "photoURL": NSNull()
-        ])
+        ]).documentID
+        
+        if let photo = photo {
+            uploadPhoto(photo: photo, documentID: id)
+        }
+    }
+    
+    private func uploadPhoto(photo: UIImage, documentID: String) {
+        guard let data = photo.jpegData(compressionQuality: 1.0) else { return }
+        let imageName = UUID().uuidString
+        
+        let imageReference = Storage.storage().reference().child("images").child(imageName)
+        imageReference.putData(data, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("ERROR could not upload image \(error.localizedDescription)")
+                return
+            }
+            
+            imageReference.downloadURL { (url, error) in
+                if let error = error {
+                    print("ERROR could not get image url \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let url = url else {
+                    print("Image URL not valid")
+                    return
+                }
+                
+                self.db.collection("workouts").document(documentID).updateData([
+                    "photoURL": url.absoluteString
+                ]) { (error) in
+                    if let error = error {
+                        print("ERROR connecting image URL to firestore")
+                    }
+                }
+            }
+        }
     }
 }

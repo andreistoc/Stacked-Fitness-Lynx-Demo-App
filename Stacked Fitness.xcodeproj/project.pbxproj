@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270BC860261319B5002B074D /* WorkoutHistoryView.swift */; };
 		271438CA2615384100EEA387 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271438C92615384100EEA387 /* WorkoutCardView.swift */; };
+		271438CF2615F85F00EEA387 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271438CE2615F85F00EEA387 /* ImagePicker.swift */; };
 		2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D754261333DE00A7B5AC /* NewWorkoutView.swift */; };
 		2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740D7592613394C00A7B5AC /* WorkoutStore.swift */; };
 		276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BBB6A2611E944001D1F62 /* SessionStore.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		270BC860261319B5002B074D /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryView.swift; sourceTree = "<group>"; };
 		271438C92615384100EEA387 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		271438CE2615F85F00EEA387 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2740D754261333DE00A7B5AC /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 		2740D7592613394C00A7B5AC /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		276BBB6A2611E944001D1F62 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				27FB7047260E339B0033B953 /* Info.plist */,
 				27FB7044260E339B0033B953 /* Preview Content */,
 				276BBB6D261209F2001D1F62 /* AuthView.swift */,
+				271438CE2615F85F00EEA387 /* ImagePicker.swift */,
 			);
 			path = "Stacked Fitness";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				2740D755261333DE00A7B5AC /* NewWorkoutView.swift in Sources */,
 				271438CA2615384100EEA387 /* WorkoutCardView.swift in Sources */,
 				2740D75A2613394C00A7B5AC /* WorkoutStore.swift in Sources */,
+				271438CF2615F85F00EEA387 /* ImagePicker.swift in Sources */,
 				270BC861261319B5002B074D /* WorkoutHistoryView.swift in Sources */,
 				276BBB6B2611E944001D1F62 /* SessionStore.swift in Sources */,
 			);
