@@ -68,14 +68,21 @@ struct SignInView : View {
                     
                     TextField("Email", text: $email)
                         .padding()
+                        .foregroundColor(.white)
+                        .autocapitalization(.none)
+                        
                     
                     SecureField("Password", text: $password)
                         .padding([.leading, .trailing])
+                        .foregroundColor(.white)
+                        .autocapitalization(.none)
+                        
                     
                     
                     if (error) {
                         // Show alert
                         Text("THERE HAS BEEN A TERRIBLE MISTAKE").padding()
+                            .foregroundColor(.white)
                     }
                     
                     
@@ -143,9 +150,11 @@ struct SignUpView : View {
                 Text("Create an account")
                     .font(.title)
                     .padding(.horizontal)
+                    .autocapitalization(.none)
                 
                 TextField("Email", text: $email)
                     .padding()
+                    .autocapitalization(.none)
                 
                 VStack(alignment: .leading) {
                     SecureField("Password", text: $password)

@@ -6,11 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-
-
-// https://benmcmahen.com/authentication-with-swiftui-and-firebase/
-import SwiftUI
 import Foundation
 import Firebase
 import Combine

@@ -48,5 +48,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow access to camera in order to take photos</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

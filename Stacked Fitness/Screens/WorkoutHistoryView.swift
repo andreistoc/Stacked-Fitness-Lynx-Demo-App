@@ -18,6 +18,14 @@ struct WorkoutHistoryView: View {
         workoutStore.fetch(userID: self.session.session!.uid)
     }
     
+    init() {
+            //Use this if NavigationBarTitle is with Large Font
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            //Use this if NavigationBarTitle is with displayMode = .inline
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        }
+    
     var body: some View {
             NavigationView {
                 ZStack {
@@ -25,12 +33,10 @@ struct WorkoutHistoryView: View {
                     .ignoresSafeArea()
                     VStack {
                         ForEach(workoutStore.workouts) { workout in
-                            Button(action: {self.showWorkoutDetail.toggle()}) {
-                                WorkoutCardView(workout: workout).padding()
-                                    .sheet(isPresented: $showWorkoutDetail) {
-                                        WorkoutDetailView(workout: workout)
-                                    }
-                            }
+                                NavigationLink(destination: WorkoutDetailView(workout: workout)) {
+                                    WorkoutCardView(workout: workout).padding()
+                                }
+                                
                         }
                         Spacer()
                     }
@@ -53,12 +59,15 @@ struct WorkoutHistoryView: View {
                     
                 }.navigationTitle(Text("Workout History"))
                 .toolbar {
-                    Button("Sign Out") {
-                        session.signOut()
-                        workoutStore.workouts = []
+                    NavigationLink(destination:
+                        ProfileView()
+                    ) {
+                        Text("Profile")
                     }
+                    
                 }
             }.onAppear(perform: fetchWorkouts)
+            .accentColor(.white)
     }
 }
 

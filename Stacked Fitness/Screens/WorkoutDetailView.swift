@@ -16,7 +16,7 @@ struct WorkoutDetailView: View {
             ZStack {
                 Rectangle()
                     .fill(LinearGradient(gradient: Gradient(colors: [Color("gradient1"), Color("gradient2")]), startPoint: .top, endPoint: .bottom))
-                    .edgesIgnoringSafeArea([.bottom])
+                    .edgesIgnoringSafeArea(.all)
                 
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
